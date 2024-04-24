@@ -26,8 +26,13 @@ class MainActivity : AppCompatActivity() {
     lateinit var num2: String
     var result: Double? = null // 계산 결과 저장. null을 허용(? 표시)하여 초기에는 값이 없음을 나타냄.
 
-    //
-   // C:\Users\Administrator\AndroidStudioProjects\project4_1\app\build\intermediates\compile_and_runtime_not_namespaced_r_class_jar\debug\processDebugResources\R.jarC:\Users\Administrator\AndroidStudioProjects\project4_1\app\build\intermediates\compile_and_runtime_not_namespaced_r_class_jar\debug\processDebugResources\R.jar
+    /* R.java 란?
+    안드로이드 리소스(레이아웃, 이미지, 문자열 등)를 식별하기 위한 변수들을 관리하는 R 클래스.
+    ex)
+    1. res/drawable 경로에 my_image_01.png 파일을 추가하면,
+    2. R.java 파일에 정수 형태의 "my_image_01" 변수가 자동으로 생성되며,
+    3. 다른 자바 코드에서 "R.drawable.my_image_01" 으로 해당 이미지 리소스를 참조할 수 있게 된다.
+    */
 
 
     // onCreate() :  액티비티가 생성될 때 호출. 이 메서드 내에서 UI 컴포넌트를 초기화하고, 버튼 클릭 이벤트 핸들러를 설정
@@ -57,7 +62,11 @@ class MainActivity : AppCompatActivity() {
                 입력 검증: 입력 값이 비었는지 확인하고, 비어 있으면 Toast 메시지를 통해 사용자에게 알림.
                 계산 실행: 입력 값이 유효한 경우, 적절한 연산을 수행.
                 나누기(btnDiv)와 나머지(btnRem) 연산에서는 분모가 0인지 추가로 검사.
-                결과 표시: textResult TextView에 결과를 표시.*/
+                결과 표시: textResult TextView에 결과를 표시.
+
+                레이아웃 파일에 TextView 등을 추가하고 id 값을 설정하면, R.java파일에 해당 id값을 이름으로하는 정수 타입의 변수가 생성된다.
+                이 것이 자바 코드에서 R.id.아이디값 으로 해당 뷰를 참조할 수 있게 되는 원리다.
+                */
 
         btnAdd.setOnClickListener {
             num1 =
